@@ -600,7 +600,7 @@ func TestIP(t *testing.T) {
 		case v.Port == "443":
 			switch v.Title {
 			case "FOFA Pro - 网络空间安全搜索引擎":
-				if v.Domain != "fofa.so" && v.Domain != "106.75.75.204" {
+				if v.Domain != "fofa.info" && v.Domain != "106.75.75.204" {
 					t.Errorf("%s\n", v)
 				}
 			}
