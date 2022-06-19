@@ -60,7 +60,7 @@ type User struct {
 type Results []result
 
 const (
-	defaultAPIUrl = "https://fofa.so/api/v1/search/all?"
+	defaultAPIUrl = "https://fofa.info/api/v1/search/all?"
 )
 
 var (
@@ -101,7 +101,7 @@ func (ff *Fofa) Get(u string) ([]byte, error) {
 
 // QueryAsJSON make a fofa query and return json data as result
 // echo 'domain="nosec.org"' | base64 - | xargs -I{}
-// curl "https://fofa.so/api/v1/search/all?email=${FOFA_EMAIL}&key=${FOFA_KEY}&qbase64={}"
+// curl "https:///api/v1/search/all?email=${FOFA_EMAIL}&key=${FOFA_KEY}&qbase64={}"
 // host title ip domain port country city
 func (ff *Fofa) QueryAsJSON(page uint, args ...[]byte) ([]byte, error) {
 	var (
@@ -166,7 +166,7 @@ func (ff *Fofa) QueryAsArray(page uint, args ...[]byte) (result Results, err err
 // UserInfo get user information
 func (ff *Fofa) UserInfo() (user *User, err error) {
 	user = new(User)
-	queryStr := strings.Join([]string{"https://fofa.so/api/v1/info/my?email=", string(ff.email), "&key=", string(ff.key)}, "")
+	queryStr := strings.Join([]string{"https://fofa.info/api/v1/info/my?email=", string(ff.email), "&key=", string(ff.key)}, "")
 
 	content, err := ff.Get(queryStr)
 
