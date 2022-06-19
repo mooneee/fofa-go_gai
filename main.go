@@ -31,7 +31,7 @@ import (
 var (
 	fields = flag.String("fields", "host,ip,port", "fields which you want to select")
 	query  = flag.String("query", "", "query string")
-	email  = flag.String("email", os.Getenv("FOFA_EMAIL"), "an email which you login to fofa.so")
+	email  = flag.String("email", os.Getenv("FOFA_EMAIL"), "an email which you login to fofa.info")
 	key    = flag.String("key", os.Getenv("FOFA_KEY"), "md5 string which you can find on userinfo page")
 	format = flag.String("format", "json", "output format")
 	page   = flag.Int("page", 1, "page number you want to query")
@@ -48,7 +48,7 @@ func usage() {
 
     The options are:
 
-            email           the email which you login to fofa.so
+            email           the email which you login to fofa.info
                             Use FOFA_EMAIL env by default.
 
             key             the md5 string which you can find on userinfo page
@@ -57,7 +57,7 @@ func usage() {
             fields          fields which you want to select
                             Use host,ip,port as default.
 
-            query           query statement which is similar to the statement used in the fofa.so
+            query           query statement which is similar to the statement used in the fofa.info
 
             format          output format
                             Json(json) as default, alternatively you can select array(array).
